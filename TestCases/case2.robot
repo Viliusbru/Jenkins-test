@@ -1,6 +1,5 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library  SeleniumLibrary
 Library  ../ExternalKeywords/locators.py
 Resource  ../Resources/resource1.robot
 
