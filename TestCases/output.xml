@@ -1,78 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220525 18:01:20.861" rpa="false" schemaversion="3">
-<suite id="s1" name="Case4" source="C:\Users\vbruzda\Desktop\projektai\TestCases\case4.robot">
-<test id="s1-t1" name="TC1" line="6">
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220526 16:23:08.164" rpa="false" schemaversion="3">
+<suite id="s1" name="Case2" source="C:\Users\vbruzda\Desktop\projektai\TestCases\case2.robot">
+<test id="s1-t1" name="Robot Fetch Data" line="11">
+<kw name="Start Browser and Maximize" library="resource1">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://thetestingworld.com/testings/index.php?message=2</arg>
+<arg>http://www.thetestingworld.com/testings</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220525 18:01:21.119" level="INFO">Opening browser 'Chrome' to base url 'https://thetestingworld.com/testings/index.php?message=2'.</msg>
-<status status="PASS" starttime="20220525 18:01:21.119" endtime="20220525 18:01:23.127"/>
+<msg timestamp="20220526 16:23:08.368" level="INFO">Opening browser 'Chrome' to base url 'http://www.thetestingworld.com/testings'.</msg>
+<status status="PASS" starttime="20220526 16:23:08.368" endtime="20220526 16:23:10.279"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220526 16:23:10.279" endtime="20220526 16:23:10.412"/>
+</kw>
+<status status="PASS" starttime="20220526 16:23:08.368" endtime="20220526 16:23:10.412"/>
+</kw>
+<kw name="Read Element Locator">
+<var>${username}</var>
+<arg>Registration.username_textbox</arg>
+<kw name="Read Locator From Json" library="locators">
+<var>${r}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20220526 16:23:10.416" level="INFO">${r} = fld_username</msg>
+<status status="PASS" starttime="20220526 16:23:10.413" endtime="20220526 16:23:10.416"/>
+</kw>
+<msg timestamp="20220526 16:23:10.416" level="INFO">${username} = fld_username</msg>
+<status status="PASS" starttime="20220526 16:23:10.413" endtime="20220526 16:23:10.416"/>
+</kw>
+<kw name="Read Element Locator">
+<var>${email}</var>
+<arg>Registration.email_textbox</arg>
+<kw name="Read Locator From Json" library="locators">
+<var>${r}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20220526 16:23:10.416" level="INFO">${r} = fld_email</msg>
+<status status="PASS" starttime="20220526 16:23:10.416" endtime="20220526 16:23:10.416"/>
+</kw>
+<msg timestamp="20220526 16:23:10.416" level="INFO">${email} = fld_email</msg>
+<status status="PASS" starttime="20220526 16:23:10.416" endtime="20220526 16:23:10.416"/>
+</kw>
+<kw name="Read Element Locator">
+<var>${password}</var>
+<arg>Registration.password_textbox</arg>
+<kw name="Read Locator From Json" library="locators">
+<var>${r}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20220526 16:23:10.417" level="INFO">${r} = fld_password</msg>
+<status status="PASS" starttime="20220526 16:23:10.417" endtime="20220526 16:23:10.417"/>
+</kw>
+<msg timestamp="20220526 16:23:10.417" level="INFO">${password} = fld_password</msg>
+<status status="PASS" starttime="20220526 16:23:10.417" endtime="20220526 16:23:10.417"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>//input[@name="fld_username"]</arg>
-<arg>asd</arg>
+<arg>name:${username}</arg>
+<arg>Testing</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220525 18:01:23.129" level="INFO">Typing text 'asd' into text field '//input[@name="fld_username"]'.</msg>
-<status status="PASS" starttime="20220525 18:01:23.128" endtime="20220525 18:01:23.265"/>
+<msg timestamp="20220526 16:23:10.419" level="INFO">Typing text 'Testing' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20220526 16:23:10.419" endtime="20220526 16:23:10.520"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>//input[@name="fld_email"]</arg>
-<arg>asd@gmail.com</arg>
+<arg>name:${email}</arg>
+<arg>emailas@emailas.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220525 18:01:23.267" level="INFO">Typing text 'asd@gmail.com' into text field '//input[@name="fld_email"]'.</msg>
-<status status="PASS" starttime="20220525 18:01:23.266" endtime="20220525 18:01:23.400"/>
+<msg timestamp="20220526 16:23:10.521" level="INFO">Typing text 'emailas@emailas.com' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20220526 16:23:10.520" endtime="20220526 16:23:10.602"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>//input[@name="fld_password"]</arg>
-<arg>***</arg>
+<arg>name:${password}</arg>
+<arg>123456</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220525 18:01:23.401" level="INFO">Typing text '***' into text field '//input[@name="fld_password"]'.</msg>
-<status status="PASS" starttime="20220525 18:01:23.400" endtime="20220525 18:01:23.519"/>
+<msg timestamp="20220526 16:23:10.603" level="INFO">Typing text '123456' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20220526 16:23:10.602" endtime="20220526 16:23:10.681"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//input[@name="fld_cpassword"]</arg>
-<arg>***</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220525 18:01:23.524" level="INFO">Typing text '***' into text field '//input[@name="fld_cpassword"]'.</msg>
-<status status="PASS" starttime="20220525 18:01:23.522" endtime="20220525 18:01:23.642"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//form[@name="register"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220525 18:01:23.643" level="INFO">Clicking element '//form[@name="register"]'.</msg>
-<status status="PASS" starttime="20220525 18:01:23.642" endtime="20220525 18:01:23.709"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//input[@name="phone"]</arg>
-<arg>asdasd</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220525 18:01:23.711" level="INFO">Typing text 'asdasd' into text field '//input[@name="phone"]'.</msg>
-<status status="PASS" starttime="20220525 18:01:23.710" endtime="20220525 18:01:23.801"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//input[@name="address"]</arg>
-<arg>asdasdasd</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220525 18:01:23.802" level="INFO">Typing text 'asdasdasd' into text field '//input[@name="address"]'.</msg>
-<status status="PASS" starttime="20220525 18:01:23.802" endtime="20220525 18:01:23.927"/>
-</kw>
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<arg>//select[@name="sex"]</arg>
-<arg>2</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20220525 18:01:23.927" level="INFO">Selecting options from selection list '//select[@name="sex"]' by value 2.</msg>
-<status status="PASS" starttime="20220525 18:01:23.927" endtime="20220525 18:01:24.025"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//input[@name="terms"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220525 18:01:24.026" level="INFO">Clicking element '//input[@name="terms"]'.</msg>
-<status status="PASS" starttime="20220525 18:01:24.026" endtime="20220525 18:01:24.096"/>
-</kw>
-<status status="PASS" starttime="20220525 18:01:21.117" endtime="20220525 18:01:24.097"/>
+<status status="PASS" starttime="20220526 16:23:08.367" endtime="20220526 16:23:10.682"/>
 </test>
-<status status="PASS" starttime="20220525 18:01:20.863" endtime="20220525 18:01:24.099"/>
+<status status="PASS" starttime="20220526 16:23:08.166" endtime="20220526 16:23:10.683"/>
 </suite>
 <statistics>
 <total>
@@ -81,7 +84,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Case4">Case4</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Case2">Case2</stat>
 </suite>
 </statistics>
 <errors>
